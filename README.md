@@ -46,7 +46,8 @@ about the installation.
 License
 -------
 
-TAME is dual licensed under the MIT and the GPLv3 license.
+TAME is dual licensed under the MIT and the GPLv3 license. Beckhoff® and TwinCAT® are registered trademarks of Beckhoff 
+Automation GmbH.
 
 
 Credits
@@ -62,6 +63,5 @@ Thanks to:
 - The people at Beckhoff for their great products.
 
 
-Beckhoff® and TwinCAT® are registered trademarks of Beckhoff Automation GmbH.
 
 
