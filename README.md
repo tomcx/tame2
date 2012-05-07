@@ -1,6 +1,7 @@
 TAME 2: TwinCAT ADS Made Easy
 =============================
 
+
 Introduction
 ------------
 
@@ -11,15 +12,15 @@ opinion) feature rich piece of software and I hope it will be useful for others.
 is my first real JavaScript project and my first encounter with OOP (I know this is not correct in JS), so don't get
 upset when you look at the code.
 
+The library allows to exchange data with a TwinCAT PLC without any knowledge of ADS. The browser connects to the 
+webserver running on the PLC device, the ADS commands are wrapped in AJAX/SOAP requests.
+
 If you want to know more about the basics of the access to the AdsWebService with JavaScript look at the examle 
 [here] (http://infosys.beckhoff.com/content/1031/tcsample_webservice/html/webservice_samplejs.html).
 
 
 Features
 --------
-
-The library allows to exchange data with a TwinCAT PLC without any knowledge of ADS. The communication is based on 
-AJAX requests, the browser connects to the webserver running on the PLC device.
 
 There are methods for read and write access to single variables, variable blocks, arrays and structures in the TwinCAT 
 PLC. To reduce overhead and keep the communication efficent, access is only possible to allocated addresses 
@@ -52,12 +53,13 @@ Credits
 -------
 
 Thanks to:
- - Sven Mintel for his tutorial about ajax requests at:
-   http://www.tutorials.de/content/668-ajax-http-requests-unter-kontrolle-behalten.html
- - The maintainers of selfhtml.org and especially the folks at the forum there.
- - Countless other people in the web for sharing their knowledge of JavaScript.
- - The Aptana project for my favorite IDE.
- - The people at Beckhoff for their great products.
+- All people who gave me feedback or made suggestions.
+- Sven Mintel for his tutorial about ajax requests at:
+  http://www.tutorials.de/content/668-ajax-http-requests-unter-kontrolle-behalten.html
+- The maintainers of selfhtml.org and especially the folks at the forum there.
+- Countless other people in the web for sharing their knowledge of JavaScript.
+- The Aptana project for my favorite IDE.
+- The people at Beckhoff for their great products.
 
 
 Beckhoff® and TwinCAT® are registered trademarks of Beckhoff Automation GmbH.
