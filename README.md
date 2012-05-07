@@ -15,7 +15,7 @@ upset when you look at the code.
 The library allows to exchange data with a TwinCAT PLC without any knowledge of ADS. The browser connects to the 
 webserver running on the PLC device, the ADS commands are wrapped in AJAX/SOAP requests.
 
-If you want to know more about the basics of the access to the AdsWebService with JavaScript look at the examle 
+If you want to know more about the basics of the access to the ADS WebService with JavaScript look at the examle 
 [here] (http://infosys.beckhoff.com/content/1031/tcsample_webservice/html/webservice_samplejs.html).
 
 
