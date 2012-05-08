@@ -5,13 +5,14 @@
 - New feature: Support for data type LREAL added (thanks to Martin Geiger for the preliminary work).
 
 - New feature: For the method "readReq" and those for reading single variables
-  there are now 2 new options, "prefix" and "suffix". 
+  there are now 2 new options, "prefix" and "suffix". Documentation updated.
 
-- Bugfix: Issue with reading of REAL variables fixed.
+- Bugfix: Issue with reading REAL values of 0 fixed. 
 
 - Bugfix: Incorrect alignment (ARM-Processors) for arrays of structures fixed.
 
-- Bugfix: Minor problems with some examples solved.
+- Bugfix: Problems with the basic example solved. I've changed addresses both in the PLC program
+  and in the JavaScript file.
 
 
  
