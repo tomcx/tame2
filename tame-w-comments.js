@@ -1,5 +1,5 @@
 /*!
- * TAME [TwinCAT ADS Made Easy] V2.2
+ * TAME [TwinCAT ADS Made Easy] V2.2.1
  * 
  * Copyright (c) 2009-2012 Thomas Schmidt; t.schmidt.p1 at freenet.de
  * 
