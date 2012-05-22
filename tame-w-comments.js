@@ -1813,7 +1813,7 @@ TAME.WebServiceClient = function(service) {
                     case 'DATE':
                     case 'DT':
                     case 'TOD':
-                        item.val = new Date;
+                        item.val = new Date();
                         break;
                     default:
                         item.val = 0;
@@ -2241,7 +2241,7 @@ TAME.WebServiceClient = function(service) {
                     plen = len < 4 ? len : 4;
                     
                     //Calculate the place of the element in the data string
-                    if (!adsReq.reqDescr.seq === true) {
+                    if (adsReq.reqDescr.seq !== true) {
                         //If variable addresses are used.
                         strAddr = itemList[idx].addr - adsReq.reqDescr.addr;
                     } else if (adsReq.reqDescr.dataAlign4 === true && plen > 1 && type[0] != 'STRING' && strAddr > 0) {
