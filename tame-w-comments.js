@@ -1,5 +1,5 @@
 /*!
- * TAME [TwinCAT ADS Made Easy] V2.2.1
+ * TAME [TwinCAT ADS Made Easy] V2.2.2
  * 
  * Copyright (c) 2009-2012 Thomas Schmidt; t.schmidt.p1 at freenet.de
  * 
@@ -1901,7 +1901,7 @@ TAME.WebServiceClient = function(service) {
                     } else {
                         try {
                             console.log('TAME library error: Date is not an object!)');
-                            console.log(item.val);
+                            console.log(item);
                         } catch(e) {}
                     }
                     bytes = numToByteArr(val, len);
@@ -1964,14 +1964,14 @@ TAME.WebServiceClient = function(service) {
                         val = 0;
                         try {
                             console.log('TAME library warning: Lower limit for TIME variable exceeded!)');
-                            console.log(item.val + type[1]);
+                            console.log('value: ' + item.val + type[1]);
                             console.log(item);
                         } catch(e) {}
                     } else if (val > 4294967295) {
                         val = 4294967295;
                         try {
                             console.log('TAME library warning: Upper limit for TIME variable exceeded!)');
-                            console.log(item.val + type[1]);
+                            console.log('value: ' + item.val + type[1]);
                             console.log(item);
                         } catch(e) {}
                     }
@@ -1986,7 +1986,7 @@ TAME.WebServiceClient = function(service) {
                     break;
                 default:
                     try {
-                        console.log('TAME library error: Unknown data type in write request : ' + item.type);
+                        console.log('TAME library error: Unknown data type in write request : ' + type[0]);
                         console.log(item);
                     } catch (e) {}
                     break;

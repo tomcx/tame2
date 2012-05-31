@@ -1,3 +1,14 @@
+                       TAME V2.2.2 Release Notes 
+                       -------------------------
+                       
+
+- Documentation updated: For the reading of structures the parameter "SP" was not described.
+
+- Minor changes.
+
+
+
+
                        TAME V2.2.1 Release Notes 
                        -------------------------
                        
