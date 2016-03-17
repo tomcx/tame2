@@ -1,6 +1,8 @@
 TAME 2: TwinCAT ADS Made Easy
 =============================
 
+**Important: This version is not supported anymore. You should switch to [TAME 4] (https://github.com/tomcx/tame4).**
+
 
 Introduction
 ------------
