@@ -6,7 +6,7 @@
     <title>TAME 2 by tomcx</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
@@ -27,104 +27,94 @@
         </ul>
       </header>
       <section>
-        <h1>TAME 2: TwinCAT ADS Made Easy</h1>
+        <h1>
+<a id="tame-2-twincat-ads-made-easy" class="anchor" href="#tame-2-twincat-ads-made-easy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TAME 2: TwinCAT ADS Made Easy</h1>
 
-<p><strong>Current version: V2.2.2</strong></p>
+<p><strong>Important: This version is not supported anymore. You should switch to <a href="http://tomcx.github.io/tame4">TAME 4</a>.</strong></p>
 
-<h2>Introduction</h2>
+<h2>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h2>
 
 <p>TAME is JavaScript library created for an easy and comfortable access to the TwinCAT ADS WebService. The name is an acronym for „TwinCAT ADS Made Easy“ and stands also for „taming“ the complexity of ADS and AJAX requests. Originally a „wast product“ from the programming of a browser based visualisation for my home, it has become a (in my opinion) useful little piece of software and I hope it will help others who want to develop their own visualisations.</p>
 
-<h2>Usage</h2>
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>The library allows to exchange data with a TwinCAT PLC without any knowledge of ADS. The browser connects to the webserver running on the PLC device and the ADS commands are wrapped in AJAX/SOAP requests. </p>
 
 <p>Link the library in your project like any other JavaScript file and create the client like this:</p>
 
-<div class="highlight">
-<pre><span class="kd">var</span> <span class="nx">Plc</span> <span class="o">=</span>  <span class="nx">TAME</span><span class="p">.</span><span class="nx">WebServiceClient</span><span class="p">.</span><span class="nx">createClient</span><span class="p">({</span>
-    <span class="nx">serviceUrl</span><span class="o">:</span> <span class="s1">'http://192.168.1.2/TcAdsWebService/TcAdsWebService.dll'</span><span class="p">,</span>
-    <span class="nx">amsNetId</span><span class="o">:</span> <span class="s1">'192.168.1.2.1.1'</span><span class="p">,</span>
-    <span class="nx">amsPort</span><span class="o">:</span> <span class="s1">'801'</span><span class="p">,</span>     <span class="c1">//default</span>
-    <span class="nx">dataAlign4</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>  <span class="c1">//default</span>
-    <span class="nx">language</span><span class="o">:</span> <span class="s1">'ge'</span>      <span class="c1">//default</span>
-<span class="p">});</span>
-</pre>
-</div>
-
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> Plc <span class="pl-k">=</span>  <span class="pl-c1">TAME</span>.<span class="pl-smi">WebServiceClient</span>.<span class="pl-en">createClient</span>({
+    serviceUrl<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>http://192.168.1.2/TcAdsWebService/TcAdsWebService.dll<span class="pl-pds">'</span></span>,
+    amsNetId<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>192.168.1.2.1.1<span class="pl-pds">'</span></span>,
+    amsPort<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>801<span class="pl-pds">'</span></span>,     <span class="pl-c">//default</span>
+    dataAlign4<span class="pl-k">:</span> <span class="pl-c1">false</span>,  <span class="pl-c">//default</span>
+    language<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ge<span class="pl-pds">'</span></span>      <span class="pl-c">//default</span>
+});</pre></div>
 
 <p>To write a boolean variable to the PLC you just have to write one line of code:</p>
 
-<div class="highlight">
-<pre><span class="nx">Plc</span><span class="p">.</span><span class="nx">writeBool</span><span class="p">({</span><span class="nx">addr</span><span class="o">:</span><span class="s2">"%MB10"</span><span class="p">,</span> <span class="nx">val</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
-</pre>
-</div>
-
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">Plc</span>.<span class="pl-en">writeBool</span>({addr<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">"</span>%MB10<span class="pl-pds">"</span></span>, val<span class="pl-k">:</span> <span class="pl-c1">true</span>});</pre></div>
 
 <p>Reading a PLC variable and storing the value in a (global) JavaScript variable is also quite easy:</p>
 
-<div class="highlight">
-<pre><span class="nx">Plc</span><span class="p">.</span><span class="nx">readBool</span><span class="p">({</span><span class="nx">addr</span><span class="o">:</span><span class="s2">"%MB10"</span><span class="p">,</span> <span class="nx">jvar</span><span class="o">:</span><span class="s2">"myVar"</span><span class="p">});</span>
-</pre>
-</div>
-
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">Plc</span>.<span class="pl-en">readBool</span>({addr<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">"</span>%MB10<span class="pl-pds">"</span></span>, jvar<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">"</span>myVar<span class="pl-pds">"</span></span>});</pre></div>
 
 <p>A more complex example of reading multiple variables with a function executed after the request has successfully finished:</p>
 
-<div class="highlight">
-<pre><span class="nx">Plc</span><span class="p">.</span><span class="nx">readReq</span><span class="p">({</span>
-    <span class="nx">addr</span><span class="o">:</span> <span class="s1">'%MB2000'</span><span class="p">,</span>
-    <span class="nx">seq</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nx">items</span><span class="o">:</span> <span class="p">[{</span>
-        <span class="nx">jvar</span><span class="o">:</span> <span class="s1">'counter1.data'</span><span class="p">,</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="s1">'INT'</span>
-    <span class="p">},{</span>
-        <span class="nx">jvar</span><span class="o">:</span> <span class="s1">'counter2.data'</span><span class="p">,</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="s1">'INT'</span>
-    <span class="p">},{</span>
-        <span class="nx">jvar</span><span class="o">:</span> <span class="s1">'runLight[0]'</span><span class="p">,</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="s1">'BOOL'</span>
-    <span class="p">},{</span>
-        <span class="nx">jvar</span><span class="o">:</span> <span class="s1">'runLight[1]'</span><span class="p">,</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="s1">'BOOL'</span>
-    <span class="p">},{</span>
-        <span class="nx">jvar</span><span class="o">:</span> <span class="s1">'runLight[2]'</span><span class="p">,</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="s1">'BOOL'</span>
-    <span class="p">},{</span>
-        <span class="nx">jvar</span><span class="o">:</span> <span class="s1">'runLight[3]'</span><span class="p">,</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="s1">'BOOL'</span>
-    <span class="p">},{</span>
-        <span class="nx">jvar</span><span class="o">:</span> <span class="s1">'runLight[4]'</span><span class="p">,</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="s1">'BOOL'</span>
-    <span class="p">}],</span>
-    <span class="nx">oc</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//Set the background-color after reading data</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">runLight</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">pageElem</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'green'</span><span class="p">;</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="nx">pageElem</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-</pre>
-</div>
-
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">Plc</span>.<span class="pl-en">readReq</span>({
+    addr<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>%MB2000<span class="pl-pds">'</span></span>,
+    seq<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+    items<span class="pl-k">:</span> [{
+        jvar<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>counter1.data<span class="pl-pds">'</span></span>,
+        type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>INT<span class="pl-pds">'</span></span>
+    },{
+        jvar<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>counter2.data<span class="pl-pds">'</span></span>,
+        type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>INT<span class="pl-pds">'</span></span>
+    },{
+        jvar<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>runLight[0]<span class="pl-pds">'</span></span>,
+        type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>BOOL<span class="pl-pds">'</span></span>
+    },{
+        jvar<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>runLight[1]<span class="pl-pds">'</span></span>,
+        type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>BOOL<span class="pl-pds">'</span></span>
+    },{
+        jvar<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>runLight[2]<span class="pl-pds">'</span></span>,
+        type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>BOOL<span class="pl-pds">'</span></span>
+    },{
+        jvar<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>runLight[3]<span class="pl-pds">'</span></span>,
+        type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>BOOL<span class="pl-pds">'</span></span>
+    },{
+        jvar<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>runLight[4]<span class="pl-pds">'</span></span>,
+        type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>BOOL<span class="pl-pds">'</span></span>
+    }],
+    <span class="pl-en">oc</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
+        <span class="pl-c">//Set the background-color after reading data</span>
+        <span class="pl-k">for</span> (<span class="pl-k">var</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-c1">5</span>; i<span class="pl-k">++</span>) {
+            <span class="pl-k">if</span> (runLight[i] <span class="pl-k">===</span> <span class="pl-c1">true</span>) {
+                pageElem[i].<span class="pl-c1">style</span>.<span class="pl-c1">backgroundColor</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>green<span class="pl-pds">'</span></span>;
+            } <span class="pl-k">else</span> {
+                pageElem[i].<span class="pl-c1">style</span>.<span class="pl-c1">backgroundColor</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>red<span class="pl-pds">'</span></span>;
+            }
+        }
+    }
+});</pre></div>
 
 <p>Have a look at the manual for more information. TAME comes with various working examples including the PLC program, the best is to just try them out.</p>
 
-<h2>Features</h2>
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
 
 <p>There are methods for read and write access to single variables, variable blocks, arrays and structures in the TwinCAT PLC. To reduce overhead and keep the communication efficent, access is only possible to allocated addresses (M/MX,I/IX,Q/QX), there is no access by handles.</p>
 
 <p>Supported data types are BOOL, BYTE, WORD, DWORD, USINT, SINT, UINT, INT, UDINT, DINT, TIME, TOD, DT, DATE, REAL, LREAL and STRING. There is also a special „type“ named INT1DP: It's an INT in the PLC, but in JavaScript the variable is of type float with 1 decimal place (i.e. a value of 568 in the PLC is 56.8 in JavaScript). The library provides built-in conversion of date and time values to formatted strings and REAL values can be rounded to a desired number of decimal places. For writing arrays and arrays of structures there is an option to choose only one array item to send to the PLC instead of the whole array. Another feature is the automatic structure padding for exchanging data with ARM-based devices (i.e. CX90xx), which have a 4-byte data alignment. Set the parameter „dataAlign4“ of the client definition to „true“ and you don't need to worry about the alignment of data structures.</p>
 
-<h2>Requirements</h2>
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
 
 <p>Requried is a running ADS WebService, look at the <a href="http://infosys.beckhoff.com">Beckhoff Infosys</a> for more information about the installation. And a TwinCAT PLC of course. ;-)</p>
 
-<h2>License</h2>
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
 <p>TAME is dual licensed under the MIT and the GPLv3 license. </p>
 
@@ -135,7 +125,7 @@
       <p>Project maintained by <a href="https://github.com/tomcx">tomcx</a></p>
       <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
     </footer>
-    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
